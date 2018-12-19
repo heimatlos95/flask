@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block body%}
+
+<div class="container">
+    <div class="row">
+            <div class="col m12 s12">
+                <h4>Reyon</h4>
+                <hr>
+            </div>
+            {% for urun in urunler %}
+            <div class="col s15 m6">
+                    <div class="card">
+                      <div class="card-image">
+                        <img src="{{ urun['img']}}">
+                        <span style="background: rgba(0,0,0,0.5); display: block;width: 100% !important; padding: .3em !important;" class="card-title">
+                            <strong>{{ urun['name'] }}</strong>
+                        </span>
+                      </div>
+                      <div class="card-content">
+                        <h3>{{ urun['price'] }}$</h3>
+                      </div>
+                      <div class="card-action">
+                          {% if session.get('loggin') %}
+                        <a href="/sepetekle/{{ urun['id'] }}" class="btn blue">SATIN AL</a>
+                            {% endif %}
+                    </div>
+                    </div>
+                  </div>
+
+            {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

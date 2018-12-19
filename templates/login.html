@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block body%}
+    <div class="container">
+        <div class="row ">
+            <div class="col s11 m6 push-m3">
+                <h3 class="text-center center-align">Giriş Yapın</h3>
+                <hr>
+                <form method="POST" action="/login">
+                              <div class="row">
+                                    <div class="input-field col s12">
+                                      <input id="email" type="email" class="validate" name="email">
+                                      <label for="email">Email</label>
+                                    </div>
+                                  </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  <input id="password" type="password" class="validate" name="password">
+                                  <label for="password">Parola</label>
+                                </div>
+                              </div>
+                              <button class="btn-large waves-effect waves-light red">Giriş Yap</button>
+                </form>
+                <br/>
+                <a href="/register" class="btn-small waves-effect waves-light blue">ÜYE OL</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

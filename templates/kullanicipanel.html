@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col m10 s12 push-m1">
+            <h3 class="center-align">Bu Sayfaya Giris Yetkiniz Yoktur.</h3>
+            <a href="/addproduct" class="btn blue">Ürün Ekle</a>
+            <hr>
+            <table class=" highlight">
+                    <thead>
+                      <tr>
+                          <th>#id</th>
+                          <th>Ürün Adı</th>
+                          <th>Fiyatı</th>
+                          <th>Ürün Resmi</th>
+                          <th>İşlem</th>
+                      </tr>
+                    </thead>
+
+                    <tbody>
+                        {% for urun in urunler %}
+                      <tr>
+                        <td>{{urun['id']}}</td>
+                        <td>{{urun['name']}}</td>
+                        <td>{{urun['price']}}$</td>
+                        <td><img src="{{urun['img']}}" alt="" height="30"></td>
+                        <td><a href="/editproduct/{{urun['id']}}" class="btn btn-small orange">Düzenle</a>
+                            <a href="/deleteproduct/{{urun['id']}}" class="btn btn-small red">Sil</a>
+                        </td>
+                    </tr>
+                      {% endfor %}
+                    </tbody>
+                  </table>
+                  
+        </div>
+    </div>
+</div>
+{% endblock %}

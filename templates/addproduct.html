@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col m8 push-m2">
+            <h3 class="center-align">Ürün Ekle</h3>
+            <hr>
+            <form action="/addproduct" method="POST">
+                    <div class="input-field col s12">
+                            <input id="last_name" type="text" class="validate" name="name">
+                            <label for="last_name">Ürün Adı</label>
+                    </div>
+                    <div class="input-field col s12">
+                            <input id="last_name" type="text" class="validate" name="price">
+                            <label for="last_name">Ürün Fiyatı</label>
+                    </div>
+                    <div class="input-field col s12">
+                            <input id="last_name" type="text" class="validate" name="img">
+                            <label for="last_name">Resim URL</label>
+                    </div>
+                    <button class="btn btn-large green">Ürün Ekle</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,23 @@
+<nav>
+        <div class="nav-wrapper">
+          <a href="/" class="brand-logo">sizi stil sahibi yapar...</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="/">Ana Sayfa</a></li>
+            {% if session.get('loggin') %}
+            <li><a href="/adminpanel">{{session.get('user')}}</a></li>
+            <li><a href="/cart"> <span class="badge white" >{{ session.get('shopping-cart')|length }}</span> Sepetim</a></li>            
+            {% endif %}
+            
+
+
+            {% if not session.get('loggin') %}            
+            <li><a href="/login">Giris</a></li>
+            {% endif %}
+
+            {% if session.get('loggin') %}
+            <li><a href="/logout">Cikis</a></li>
+            {% endif %}
+            
+        </ul>
+        </div>
+      </nav>

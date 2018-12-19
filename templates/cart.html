@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col m8 push-m2">
+            <h3 class="center-align">Sepetim</h3>
+            <hr>
+                <table>
+                        <thead>
+                          <tr>
+                              <th>Ürün Adı</th>
+                              <th>Fiyat</th>
+                              <th>Adet</th>
+                              <th>İşlem</th>
+
+                          </tr>
+                        </thead>
+                
+                        <tbody>
+                            {% for product in products %}
+                          <tr>
+                            <td>{{ product[1] }}</td>
+                            <td>{{ product[2] }}$</td>
+                              <td>{{ product[4] }}</td>
+                            <td><a href="/clearcart" class="btn btn-small red">x</a></td>
+                          </tr>
+                          {% endfor %}
+                          <tr>
+                              <td colspan="2">Toplam Fiyat</td>
+                              <td>{{total}}$</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <br />
+                      <a href="/odeme" class="btn btn-large green">Siparisi Tamamla</a>
+            <a href="/clearcart" class="btn btn-large red">Sepeti Boşalt</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
